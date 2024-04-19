@@ -1,1 +1,1 @@
-/*ini jsa*/
+/*ini js*/
