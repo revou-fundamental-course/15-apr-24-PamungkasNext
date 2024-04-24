@@ -1,11 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>APLIKASI SUHU </title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Konversi Suhu</title>
+  <link rel="stylesheet" href="css/style.css">
+
 </head>
-<body>
-    
+<body onload="initialize()">
+  <header>
+    <h1>Konversi Suhu</h1>
+  </header>
+
+  <div class="container">
+
+    <h2 id="judul">Konversi Suhu Celsius ke Fahrenheit</h2>
+
+    <!-- Input Suhu -->
+    <div>
+      <label id="headerInputSuhu">Masukkan suhu Celcius :</label>
+      <input type="number" id="inputSuhu" placeholder="Masukkan suhu Celcius" step="any">
+    </div>
+
+    <!-- Tombol -->
+    <div class="button-container">
+      <button class="button buttonKonversi" onclick="konversiSuhu()">Konversi</button>
+      <button class="button buttonReset" onclick="reset()">Reset</button>
+      <button class="button buttonReverse" onclick="konversiSuhuReverse()">Reverse</button>
+    </div>
+
+    <!-- Hasil Konversi -->
+    <label for="hasilSuhu">Hasil konversi:</label>
+    <textarea type="text" id="hasilSuhu" readonly></textarea>
+
+    <!-- Detail Perhitungan -->
+    <label for="detailPerhitungan">Detail perhitungan:</label>
+    <textarea id="detailPerhitungan" rows="5" readonly></textarea>
+
+    <!-- Cara Kalkulasi -->
+    <section>
+      <div>
+        <h3 id="labelCaraKonversi"></h3>
+        <hr> <!-- Garis panjang-->
+      </div>
+      <!--detail rumus celcius ke fahrenheit-->
+      <div id="caraKalkulasiFahrenheit">
+        <p id="rumusKonversi">Suhu
+          <strong><i> S</i></strong> dalam derajat Fahrenheit (&deg;F) sama dengan suhu 
+            <strong><i>S</i></strong> dalam derajat Celsius (&deg;C) kali 9/5 tambah 32.</p>
+        <span>
+        <p id="rumusKonversi">
+          <strong><i>S<sub>(&deg;F)</sub> = S<sub>(&deg;C)</sub> x 9/5 + 32</i></strong>
+        </p>
+        <span>
+        <p>atau</p><span>
+        <p id="rumusKonversi">
+            <strong><i>S<sub>(&deg;F)</sub> = S<sub>(&deg;C)</sub> x 1.8 + 32</i></strong>
+        </p>
+      </div>
+
+      <!--detail rumus fahrenheit ke celcius-->
+      <div id="caraKalkulasiCelcius">
+        <p id="rumusKonversi">Suhu
+          <strong><i> S</i></strong> dalam derajat Celcius (&deg;C) sama dengan suhu 
+            <strong><i>S</i></strong> dalam derajat Celsius (&deg;C) kurang 32 lalu kali 9/5 .</p>
+        <span>
+        <p id="rumusKonversi">
+          <strong><i>S<sub>(&deg;C)</sub> = (S<sub>(&deg;F)</sub>- 32) x 9/5 </i></strong>
+        </p>
+        <span>
+        <p>atau</p><span>
+        <p id="rumusKonversi">
+            <strong><i>S<sub>(&deg;c)</sub> = (S<sub>(&deg;F)</sub> - 32) x 1.8 </i></strong>
+        </p>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Konversi Suhu by Aditya Pamungkas</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+
 </body>
 </html>
